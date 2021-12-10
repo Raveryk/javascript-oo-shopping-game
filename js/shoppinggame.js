@@ -32,9 +32,14 @@ function Product(id, name, price, expiryDate) {
 
 // Complete the dateDiff function
 const dateDiff = (date1, date2) => {
-    let timeDiff = date2.getTime() - date1.getTime();
-    let dayDiff = timeDiff / (1000 * 3600 * 24);
-    return dayDiff;
+    // let timeDiff = date2.getTime() - date1.getTime();
+    // let dayDiff = timeDiff / (1000 * 3600 * 24);
+    // return dayDiff;
+    let timeDiff = Math.abs(date2.getTime() - date1.getTime());
+
+    let diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+    return diffDays;
 };
 
 // Here, use Object.defineProperty to create property - daysToExpire
