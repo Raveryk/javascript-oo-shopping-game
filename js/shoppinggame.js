@@ -96,7 +96,7 @@ const loadProducts = (map, prodId) => {
     try {
         // Call Object.keys() to load the property names of the Product object in to prodKeys array here
         let prodKeys = [];
-        let prodKeys = Object.keys(new Product());
+        prodKeys = Object.keys(new Product());
 
         let iterator_obj = map.entries();
 
@@ -141,7 +141,7 @@ const loadMagicProducts = (map, prodId) => {
     try {
         // Call Object.key() to load the property names of the MagicProduct object in to magProdKeys array here
         let magProdKeys = [];
-        let magProdKeys = Object.keys(new MagicProduct());
+        magProdKeys = Object.keys(new MagicProduct());
 
         let iterator_obj = map.entries();
 
@@ -232,10 +232,21 @@ function loadMasterData() {
 }
 
 // Complete this function
-const findProductById = (id) => { };
+const findProductById = (id) => {
+    newProduct = new Product()
+    return (newProduct) => {
+        if (id === newProduct.id) {
+            return true;
+        } else {
+            false;
+        }
+    }
+};
 
 // Complete this function
-const generateProductId = () => { };
+const generateProductId = () => {
+    return Math.ceil((Math.random() * 20));
+};
 
 
 const getProduct = (prodList, pId) => {
