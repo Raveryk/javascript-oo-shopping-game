@@ -40,12 +40,12 @@ const dateDiff = (date1, date2) => {
 // Here, use Object.defineProperty to create property - daysToExpire
 
 Object.defineProperty(Product.prototype, 'daysToExpire', {
-    get: () => { return dateDiff(this.expiryDate, new Date()) }
+    get: function () { return dateDiff(this.expiryDate, new Date()) }
 });
 
 // Add method getDetails to Product here
 Object.defineProperty(Product.prototype, 'getDetails', {
-    getDetails: () => { return `Product Name: ${this.name} , Product Price: ${this.price}` }
+    getDetails: function () { return `Product Name: ${this.name} , Product Price: ${this.price}` }
 })
 
 // Define the MagicProduct class here
@@ -68,7 +68,7 @@ class Rating {
 
     }
 
-    rating(value) {
+    set rating(value) {
         if (value > 1 && value <= 4) {
             this.rate = "OK";
         } else if (value >= 5 && value <= 7) {
